@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="quiz-wrapper">
+        
+        <div id="category-screen" class="screen">
+            <div class="app-header">
+                <div class="header-left">
+                    <i class="fa-solid fa-bars menu-icon"></i>
+                    <h1>Quiz Dashboard</h1>
+                </div>
+                <div class="profile-avatar"><i class="fa-solid fa-user"></i></div>
+            </div>
+
+            <div class="stats-container">
+                <div class="stat-box">
+                    <span class="stat-title">Personal Best</span>
+                    <span id="high-score-display" class="stat-value">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-title">Your Ranking</span>
+                    <span class="stat-value">1250 <i class="fa-solid fa-user-group" style="font-size: 14px;"></i></span>
+                </div>
+            </div>
+
+            <h2 class="section-title">Select a Category</h2>
+            <div class="category-list">
+                <button class="cat-btn" data-category="html">
+                    <div class="cat-left">
+                        <i class="fa-solid fa-pen-nib cat-icon html-color"></i> 
+                        <span>HTML Basic</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                </button>
+                <button class="cat-btn" data-category="css">
+                    <div class="cat-left">
+                        <i class="fa-solid fa-cube cat-icon css-color"></i> 
+                        <span>CSS Power</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                </button>
+                <button class="cat-btn" data-category="js">
+                    <div class="cat-left">
+                        <i class="fa-solid fa-flask cat-icon js-color"></i> 
+                        <span>JavaScript Ninja</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="quiz-screen" class="screen hide">
+            <div class="quiz-header">
+                <div class="header-main">
+                    <span id="current-category">Topic</span>
+                    <i class="fa-solid fa-xmark close-icon" id="quit-btn"></i>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar-text">
+                        <span>Quiz : <span id="question-number">1</span>/10</span>
+                        <span id="timer">10:00 min</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div id="progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <h2 id="question-text">Loading question...</h2>
+            </div>
+
+            <div id="answer-buttons" class="options-list"></div>
+        </div>
+
+        <div id="result-screen" class="screen hide">
+            <div class="app-header justify-end">
+                <i class="fa-solid fa-xmark close-icon" id="result-close-btn"></i>
+            </div>
+            
+            <div class="trophy-card">
+                <div class="confetti-bg">
+                    <img src="https://img.icons8.com/emoji/96/000000/trophy-emoji.png" alt="Trophy" class="trophy-img">
+                </div>
+                <h2>Congrats!</h2>
+                <h1 id="percentage-score">0% Score</h1>
+                <p class="complete-msg">Quiz completed successfully.</p>
+                
+                <div class="breakdown-text">
+                    You attempted <span id="total-attempted">10</span> questions and from that <span id="correct-count" class="highlight-green">0</span> answer is correct.
+                </div>
+
+                <div class="share-section">
+                    <span>Share with us :</span>
+                    <div class="share-icons">
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                </div>
+            </div>
+
+            <button id="retry-btn" class="submit-btn">Retry Category</button>
+        </div>
+
+    </div>
+    <script src="quiz-main.js"></script>
+</body>
+</html>
